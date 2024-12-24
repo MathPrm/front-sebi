@@ -1,10 +1,12 @@
 import '../assets/styles/home.css';
+import Sebi from './Sebi'
+import ListGames from './listGames'
 
 function Home() {
-    const title = 'Sebi La Gazelle'
     return (
         <div className='home'>
-            <h1>{title}</h1>
+            <Sebi text = "c'est partit pour de nouvelle aventures nouvelle branch!"/>
+            <ListGames/>
         </div>
     )
 }
