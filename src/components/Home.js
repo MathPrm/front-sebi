@@ -5,7 +5,7 @@ import ListGames from './listGames'
 function Home() {
     return (
         <div className='home'>
-            <Sebi text = "c'est partit pour de nouvelle aventures nouvelle branch!"/>
+            <Sebi text = "c'est partit pour de nouvelle aventures ! "/>
             <ListGames/>
         </div>
     )
