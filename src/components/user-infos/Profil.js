@@ -1,4 +1,4 @@
-import '../assets/styles/profil.css';
+//import '../assets/styles/profil.css';
 
 function Profil() {
     const title = 'Page de profil'

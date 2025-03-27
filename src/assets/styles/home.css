@@ -1,0 +1,6 @@
+.home{
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+    gap: 30px;
+}

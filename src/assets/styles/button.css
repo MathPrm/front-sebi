@@ -1,0 +1,15 @@
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5D7D20;
+    font-size: 25px;
+    height: 50px;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.button{
+    color: white;
+    text-decoration: none;
+}

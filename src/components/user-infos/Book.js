@@ -1,4 +1,4 @@
-import '../assets/styles/book.css';
+//import '../assets/styles/book.css';
 
 function Book() {
     const title = 'La galerie d\'images'

@@ -1,6 +1,6 @@
 import '../assets/styles/home.css';
 import Sebi from './Sebi'
-import ListGames from './listGames'
+import ListGames from './ListGames'
 
 function Home() {
     return (
