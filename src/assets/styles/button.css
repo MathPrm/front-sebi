@@ -13,3 +13,15 @@
     color: white;
     text-decoration: none;
 }
+
+.home-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,28 @@
+.list-games-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+.game-card {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .list-games-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .game-card {
+        width: calc(33.33% - 20px);
+        max-width: 300px;
+        margin-bottom: 0;
+    }
+}

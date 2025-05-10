@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import '../assets/styles/button.css'
 
-function Button({to,label}){
+function Button({to,label,isHome}){
     
     
     return (
-        <nav className='buttons'>
-            <Link to={to} className='button'>{label}</Link>
+        <nav className={isHome ? 'home-button' : 'buttons'}>
+            <Link to={to} className={isHome ? 'home-link' : 'button'}>{label}</Link>
         </nav>
     )
 }

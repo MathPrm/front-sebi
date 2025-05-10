@@ -1,9 +1,30 @@
+.listGames{
+    display: flex;
+    align-items: center;
+}
+
 .containerGames{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
     background-color: #390A03;
     border-radius: 20px;
     color: white;
-    padding: 30px;
-    height: 400px;
     text-align: center;
-    margin-bottom: 30px;
+}
+
+.games{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .games {
+        flex-direction: row;
+        justify-content: center;
+        gap: 50px;
+    }
 }

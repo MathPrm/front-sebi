@@ -1,0 +1,68 @@
+
+#blockCalcule #response{
+    position: absolute;
+    bottom: 40px;
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+#blockCalcule #faux{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    background-color: white;
+    border: solid 1px;
+    position: absolute;
+    bottom: 40px;
+}
+
+#rightBlock{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#difficile-hiboux{
+    position: absolute;
+    bottom: -4px;
+    z-index: 0;
+}
+
+/*__________________________________________________________________________________*/
+
+#btn{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-block:10px;
+}
+
+#btn #btnVal{
+    height: 50px;
+    width: 100px;
+    background-color: #ED9D67;
+    color: #390A03;
+    border-radius: 5px;
+}
+
+
+
+#chrono{
+    background-color: #390a03;
+    color: white;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}

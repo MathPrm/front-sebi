@@ -1,0 +1,51 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.home .list-games {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .home {
+        flex-direction: row;
+        padding: 30px;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+}
+
+.sebi {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+.sebi img {
+    transform: scaleX(-1);
+    height: 20vw;
+    max-height: 200px;
+    position: relative; /* Plus besoin d'absolu ici */
+}
+
+/* La bulle au-dessus de Sebi */
+.sebi .bulle {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 40px;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    max-width: 250px;
+    font-size: 14px;
+    padding: 10px;
+
+}
