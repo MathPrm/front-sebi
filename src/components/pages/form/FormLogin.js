@@ -7,7 +7,9 @@ function Login() {
         <div className='form-login'>
             <div className="sebi">
                 <img src={Sebi}  alt='sebi la gazelle'></img>
-                <div className='bulle'>Content de te revoir !</div>
+                <div className='bulle'>
+                    <p>Content de te revoir !</p>
+                </div>
             </div>
            
             <form className="login-form">

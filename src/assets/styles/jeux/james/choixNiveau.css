@@ -5,11 +5,10 @@
 }
 
 #choixNiveau{
-    height: calc(100vh - 86px);
+    height:100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #e9ccb8;
     margin: 0;
 }
 
@@ -22,7 +21,9 @@
     gap: 20px;
 }
 
-@media screen and (orientation: landscape) {   
+/*paysage*/
+@media screen and (orientation: landscape) ,
+screen and (min-width:500px) {   
     #choixNiveau .portrait{
         display: none;
     }

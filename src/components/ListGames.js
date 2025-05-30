@@ -7,7 +7,7 @@ import JamesMiniaGame from '../assets/images/jamesMiniaGame.png'
 function ListGames(){
     return(
         <div className='containerGames'>
-            <h1>Clique sur une des images pour accompagner Sebi</h1>
+            <h2>Clique sur une des images pour accompagner Sebi</h2>
             <div className='games'>
                 <Game 
                     lien='/games/james/choixNiveau' 

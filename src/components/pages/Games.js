@@ -7,7 +7,9 @@ function GameList() {
         <div className='games-list'>
             <div className="sebi">
                 <img src={Sebi} alt='sebi la gazelle'></img>
-                <div className='bulle'>C'est parti pour de nouvelles aventures</div>
+                <div className='bulle'>
+                    <p>C'est parti pour de nouvelles aventures</p>
+                </div>
             </div>
             <div className='games-block'>
                 <ListGames/> 

@@ -162,7 +162,6 @@ function Router() {
                   <Link to="/">{HomeLogo}</Link>
                 )},
                 { path: '/games', label: 'Les jeux' },
-                { path: '/james/choix-du-niveau', label: 'Choix du Niveau' },
                 { path: '/logout', label: 'Déconnexion' },
               ]} />
               <main className='content-game'>
@@ -181,7 +180,6 @@ function Router() {
                   <Link to="/">{HomeLogo}</Link>
                 )},
                 { path: '/games', label: 'Les jeux' },
-                { path: '/james/choix-du-niveau', label: 'Choix du Niveau' },
                 { path: '/logout', label: 'Déconnexion' },
               ]} />
               <main className='content-game'>

@@ -19,6 +19,7 @@ function NavBar({links}){
                 </Link>
             </div> 
             <button className={`burger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                {/*barre menu burger*/}
                 <span></span>
                 <span></span>
                 <span></span>

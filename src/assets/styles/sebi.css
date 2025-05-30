@@ -1,0 +1,35 @@
+.sebi {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.sebi img {
+  transform: scaleX(-1);
+  min-height: 7.5rem; /* 120px */
+  height: 20vw;
+  max-height: 18.75rem; /* 300px */
+}
+
+.sebi .bulle {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 2.5rem;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.625rem; /* 90px */
+  max-width: 12.5rem; /* 200px */
+  padding: 15px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 768px) {
+    .sebi{
+        flex-direction:column-reverse;
+    }
+}

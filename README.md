@@ -69,3 +69,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # front-sebi
+
+
+
+
+/* a faire */
+
+responsive en 1er
+
+page mentions legales contact a propos 404 et 403
+mettre le jeux sebi la gazelle
+ajouter systeme de score pour james

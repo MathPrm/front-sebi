@@ -7,7 +7,9 @@ function FormSignUp() {
         <div className='form-sign-up'>
             <div className="sebi">
                 <img src={Sebi} alt='sebi la gazelle'></img>
-                <div className='bulle'>Pour te créer un compte c'est par ici !</div>
+                <div className='bulle'><p>
+                    Pour te créer un compte c'est par ici !</p>
+                </div>
             </div>
             <form className='sign-up-form'>
                 <h2 className='form-title'>Inscription</h2>
