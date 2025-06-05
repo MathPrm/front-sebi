@@ -16,15 +16,23 @@
 
 .game-name {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 20px;
     color:white;
     text-align: center;
 }
 
-@media screen and (min-width: 768px) {
+/*tablette et +*/
+@media screen and (min-width: 768px){
     .game-image {
         max-height: none;
-        height: clamp(10px, 15vw, 220px);
+        height: clamp(10px, 15vw, 180px);
     }
+}
 
+/*seulement tab et orientation paysage*/
+@media screen and (min-width: 768px) and (max-width:1024px) and (orientation:landscape){
+    .game-image {
+        max-height: none;
+        height: clamp(10px, 15vw, 200px);
+    }
 }

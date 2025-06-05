@@ -1,5 +1,4 @@
 #level{
-    
     height: 100%;    
 }
 
@@ -37,15 +36,67 @@ screen and (min-width:768px) {
     }
 }
 
+/*barre accessoire*/
 
+.top-bar{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 7;
+}
 
-#level .landscape .facile {
+.top-bar .score-info {
+    display: flex;
+    gap: 20px;
+    z-index: 5;
+    text-align: center;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);;
+
+}
+
+.top-bar .score-info span {
+    padding: 5px 15px;
+    background-color: rgba(237, 157, 103, 0.9);
+    border-radius: 20px;
+    border: 1px solid #390A03;
+    font-weight: bold;
+    color: #390A03;
+    width: 20vw;    
+}
+
+.top-bar .trophy {
+    width: 6vw;
+    max-width: 60px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #ED9D67;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.top-bar .cross {
+    width: 6vw;
+    max-width: 50px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/*contenu*/
+#level .landscape .level {
     position: relative;
     display: flex;
     flex: 1;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
+    padding-inline: 30px;
+    gap: 50px;
 }
+
 
 #level .landscape .difficile {
     position: relative;
@@ -55,86 +106,33 @@ screen and (min-width:768px) {
     justify-content: center;
 }
 
-#level .landscape .score-info {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+
+#level .landscape .level #leftBlock {
     display: flex;
-    gap: 20px;
-    z-index: 5;
-}
-
-#level .landscape .score-info span {
-    padding: 5px 15px;
-    background-color: rgba(237, 157, 103, 0.9);
-    border-radius: 20px;
-    border: 1px solid #390A03;
-    font-size: 18px;
-    font-weight: bold;
-    color: #390A03;
-}
-
-#level .landscape .trophy {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    width: 40px;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: #ED9D67;
-    cursor: pointer;
-}
-
-#level .landscape .cross {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 2;
+    min-width: 200px;
+    height: 100%;
+    align-items: end;
 }
 
 
-#level .landscape .facile #leftBlock {
-    width: 60%;
+#level .landscape .level #rightBlock {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-block: 10px;
-    gap: 30px;
-}
-
-
-
-#bulle {
-    position: relative;
-    background-color: white;
-    border: solid 1px black;
-    width: 180px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 
-
-#number {
-    font-size: 24px;
-    z-index: 4;
-}
-
-#correct {
-    font-size: 20px;
-    z-index: 4;
+#level .landscape .difficile #rightBlock {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
 }
 
 #blockResFacile {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: clamp(10px,2vw,20px);
 }
 
 #blockResDifficile {
@@ -146,66 +144,56 @@ screen and (min-width:768px) {
 }
 
 #blockResDifficile #btn{
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 5px;
 }
 
-.response {
-    height: 5vw;
-    min-height: 40px;
-    border: solid black 1px;
-    border-radius: 5px;
-    font-size: 24px;
+#blockResFacile .response {
+    border: solid black 4px;
+    border-radius: 10px;
     background-color: white;
-    width: 5vw;
-    min-width: 40px;
+    width: 8vw;
+    height: 8vw;
+    max-height: 70px;
+    max-width: 70px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);;
+
 }
 
-.response.correct {
+#blockResFacile .response.correct {
     background-color: #4CAF50;
     border-color: #45a049;
     border: solid black 1px;
 
 }
 
-.response.incorrect {
+#blockResFacile .response.incorrect {
     background-color: #f44336;
     border-color: #da190b;
     border: solid black 1px;
 }
 
-#level .landscape .facile #rightBlock {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    position: relative;
+#blockResDifficile .response{
+    font-size: clamp(1rem, 2.5vw, 1.5rem);;
+    border-radius: 10px;
+    border: solid black 4px;
+    background-color: white;
+    height: 8vw;
+    max-height: 70px;
+    text-align: center;
 }
 
-#level .landscape .difficile #rightBlock {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    position: relative;
+#blockResDifficile .btn{
+    height: 7vw;
+    max-height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+    background-color: #ED9D67;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);;
+
 }
 
-#hiboux-lvl {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#hiboux-lvl img {
-    position: absolute;
-    height: 30vw;
-    max-height: 500px;
-    bottom: 0;
-}
 
 #chrono {
     position: absolute;
@@ -240,8 +228,8 @@ screen and (min-width:768px) {
     position: relative;
     z-index: 2;
     background: white;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -264,8 +252,3 @@ screen and (min-width:768px) {
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
-
-
-
-
-

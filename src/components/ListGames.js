@@ -17,7 +17,7 @@ function ListGames(){
                 <Game 
                     lien='/games/james/choix-du-niveau' 
                     img={JamesMiniaGame} 
-                    gameName="James le hiboux"
+                    gameName="James le hibou"
                 />
             </div>
         </div>

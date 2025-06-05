@@ -4,10 +4,8 @@ import '../assets/styles/sebi.css';
 const Sebi = ({ text }) => {
   return (
     <div className="sebi">
+      <p className='bubble speech'>{text}</p>
       <img src={SebiImage} alt="Sebi la gazelle" />
-      <div className="bulle">
-        <p>{text}</p>
-      </div>
     </div>
   );
 };
