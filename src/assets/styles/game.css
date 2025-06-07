@@ -8,20 +8,31 @@
 }
 
 .game-image {
-    width: 100%;
     object-fit: contain;
     border-radius: 15px;
     overflow: hidden;
-    max-height: 150px;
+    max-height: clamp(0px,40vw,180px);
 }
 
 .game-name {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 20px;
     color:white;
     text-align: center;
 }
 
-img{
-    border-radius: 5px;
+/*tablette et +*/
+@media screen and (min-width: 768px){
+    .game-image {
+        max-height: none;
+        height: clamp(0px, 20vw, 180px);
+    }
+}
+
+/*seulement tab et orientation paysage*/
+@media screen and (min-width: 768px) and (max-width:1024px) and (orientation:landscape){
+    .game-image {
+        max-height: none;
+        height: clamp(0px, 15vw, 200px);
+    }
 }

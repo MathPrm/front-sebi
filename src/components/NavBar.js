@@ -4,8 +4,17 @@ import Button from './Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+//simulation connexion
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
+
+
 function NavBar({links}){
     const [isOpen, setIsOpen] = useState(false);
+
+    //simulation connexion
+    const { isConnected, login, logout } = useContext(AuthContext);
+
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -19,6 +28,7 @@ function NavBar({links}){
                 </Link>
             </div> 
             <button className={`burger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
+                {/*barre menu burger*/}
                 <span></span>
                 <span></span>
                 <span></span>
@@ -34,6 +44,13 @@ function NavBar({links}){
                         </Button>
                     </div>
                 ))}
+                <div className="auth-buttons">
+                    {isConnected ? (
+                        <button onClick={logout}>Se déconnecter</button>
+                    ) : (
+                        <button onClick={login}>Se connecter (simu)</button>
+                    )}
+                </div>
             </div>
         </nav>
     );

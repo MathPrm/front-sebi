@@ -1,18 +1,15 @@
 import '../../assets/styles/pages/games.css';
-import Sebi from '../../assets/images/sebi.svg'
+import Sebi from '../Sebi'
 import ListGames from '../ListGames'
 
 function GameList() {
     return (
         <div className='games-list'>
-            <div className="sebi">
-                <img src={Sebi} alt='sebi la gazelle'></img>
-                <div className='bulle'>C'est parti pour de nouvelles aventures</div>
-            </div>
+            <Sebi text="C'est parti pour de nouvelles aventures !"/>
             <div className='games-block'>
                 <ListGames/> 
-                <p>
-                    Les <b>jeux</b> te rapportent des <b>points</b>.<br/>
+                <p className='text-games'>
+                    Les <b>jeux</b> te rapportent des <b>points</b>.
                     Ces <b>points</b> te permettent de <b>gagner</b> des <b>images</b> et 
                     de les <b>ranger</b> dans ton <b>livre à images</b> disponible dans 
                     ton <b>profil</b>.

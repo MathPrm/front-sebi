@@ -1,22 +1,24 @@
 import '../../../assets/styles/pages/form/form-sign-up.css';
-import Sebi from '../../../assets/images/sebi.svg'
+import Sebi from '../../Sebi'
 
 
 function FormSignUp() {
     return (
         <div className='form-sign-up'>
-            <div className="sebi">
-                <img src={Sebi} alt='sebi la gazelle'></img>
-                <div className='bulle'>Pour te créer un compte c'est par ici !</div>
-            </div>
+            <Sebi text="Pour te créer un compte c'est par ici !"/>
+            
             <form className='sign-up-form'>
                 <h2 className='form-title'>Inscription</h2>
+                
                 <label for="username">Surnom</label>
-                <input type="text" name="username" id="username"></input>
+                <input type="text" name="username" className="username"></input>
+                
                 <label htmlFor="email">E-mail:</label>
-                <input type="email" id="email" name="email" required />
+                <input type="email" className="email" name="email" required />
+                
                 <label for="password">Mot de passe</label>
-                <input type="password" name="password" id="password"></input>
+                <input type="password" name="password" className="password"></input>
+                
                 <button type="submit" className="login-button">Connexion</button>
             </form>
         </div>

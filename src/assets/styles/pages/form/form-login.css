@@ -1,8 +1,10 @@
 .form-login {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 20px;
     width: 100%;
+    max-width: 600px;
     gap: 30px;
 }
 
@@ -22,12 +24,12 @@
     margin-bottom: 20px;
 }
 
-.login-form label {
+label {
     color: white;
     font-size: 14px;
 }
 
-.login-form input {
+input {
     padding: 10px;
     border: none;
     border-radius: 8px;
@@ -37,7 +39,7 @@
 .login-button {
     margin-top: 10px;
     padding: 12px;
-    background-color: #4CAF50;
+    background-color: #5D7D20;
     color: white;
     border: none;
     border-radius: 8px;
@@ -67,5 +69,16 @@
     .login-form input {
         padding: 12px;
         font-size: 16px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .form-login{
+        flex-direction: row;
+        max-width: none;
+    }
+
+    .login-form{
+        min-width: 600px;
     }
 }
