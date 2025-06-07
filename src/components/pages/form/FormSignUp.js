@@ -1,8 +1,19 @@
 import '../../../assets/styles/pages/form/form-sign-up.css';
 import Sebi from '../../../assets/images/sebi.svg'
+import { useState } from 'react';
 
 
 function FormSignUp() {
+    const [email, setEmail] = useState("")
+    const [isValid, setIsValid] =  useState(true)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setEmail(value);
+        setIsValid(emailRegex.test(value))
+
+    }
     return (
         <div className='form-sign-up'>
             <div className="sebi">
@@ -16,7 +27,15 @@ function FormSignUp() {
                 <label for="username">Surnom</label>
                 <input type="text" name="username" id="username"></input>
                 <label htmlFor="email">E-mail:</label>
-                <input type="email" id="email" name="email" required />
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required  
+                    onChange={handleChange} 
+                    style={{ borderColor: isValid ? "black" : "red" }}
+                />
+                {!isValid && <p style={{ color: "red" }}>Adresse email invalide</p>}
                 <label for="password">Mot de passe</label>
                 <input type="password" name="password" id="password"></input>
                 <button type="submit" className="login-button">Connexion</button>
