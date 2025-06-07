@@ -33,8 +33,11 @@
 }
 
 .mentions-legales a {
-  color: #ed9d67;
   text-decoration: underline;
+}
+
+.hebergeur a{
+  color:#ed9d67;
 }
 
 .back-home {
@@ -47,3 +50,6 @@
   text-decoration: none;
   font-weight: bold;
 }
+
+
+

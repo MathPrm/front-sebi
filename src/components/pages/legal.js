@@ -15,7 +15,7 @@ const MentionsLegales = () => {
         <h2>Hébergement</h2>
         <p><strong>Hébergeur :</strong> o2switch</p>
         <p><strong>Adresse :</strong> Chemin des Pardiaux, 63000 Clermont-Ferrand, France</p>
-        <p><strong>Site web :</strong> <a href="https://www.o2switch.fr" target="_blank" rel="noreferrer">www.o2switch.fr</a></p>
+        <p className='hebergeur'><strong>Site web :</strong> <a href="https://www.o2switch.fr" target="_blank" rel="noreferrer">www.o2switch.fr</a></p>
 
         <h2>Propriété intellectuelle</h2>
         <p>Les contenus (textes, jeux, images, sons) présents sur ce site sont la propriété exclusive de l’éditeur. Toute reproduction ou utilisation sans autorisation est interdite.</p>
