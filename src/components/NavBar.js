@@ -3,22 +3,31 @@ import Logo from '../assets/images/logo.png'
 import Button from './Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-//simulation connexion
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext';
 
 
+
+
+
 function NavBar({links}){
+
     const [isOpen, setIsOpen] = useState(false);
-
-    //simulation connexion
-    const { isConnected, login, logout } = useContext(AuthContext);
-
+    const { isAuthenticated, logout } = useContext(AuthContext);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    const filteredLinks = links.filter(link => {
+        if (isAuthenticated && (link.path === '/login' || link.path === '/signup')) {
+        return false;
+        }
+        if (!isAuthenticated && link.path === '/logout') {
+        return false;
+        }
+        return true;
+    });
 
     return(
         <nav className='navbar'>
@@ -34,7 +43,7 @@ function NavBar({links}){
                 <span></span>
             </button>
             <div className={`btns ${isOpen ? 'active' : ''}`}>
-                {links.map((link,index)=>(
+                {filteredLinks.map((link,index)=>(
                     <div key={index}>
                         <Button
                             to={link.path} 
@@ -44,13 +53,15 @@ function NavBar({links}){
                         </Button>
                     </div>
                 ))}
-                <div className="auth-buttons">
-                    {isConnected ? (
-                        <button onClick={logout}>Se déconnecter</button>
-                    ) : (
-                        <button onClick={login}>Se connecter (simu)</button>
-                    )}
-                </div>
+                {isAuthenticated && (
+                    <div>
+                    <Button
+                    to="/"
+                    label="Déconnexion"
+                    onClick={logout}
+                    />
+                    </div>
+                )}
             </div>
         </nav>
     );

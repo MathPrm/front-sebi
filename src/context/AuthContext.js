@@ -1,31 +1,37 @@
-import { createContext, useEffect, useState } from "react";
+// src/context/AuthContext.js
+import { createContext, useState, useEffect } from 'react';
 
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-  const [isConnected, setIsConnected] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // ✅ Corrigé : useEffect ne doit pas dépendre de isAuthenticated
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    setIsConnected(!!token);
+    const token = localStorage.getItem('token');
+    setIsAuthenticated(!!token);
+
+    console.log('Etat initial :', token ? 'connecté' : 'déconnecté');
   }, []);
 
-  const login = () => {
-    localStorage.setItem("token", "fake-token-123");
-    setIsConnected(true);
-    console.log('tu es connecte');
-    
+  useEffect(() => {
+    console.log('🔁 Changement d\'état :', isAuthenticated ? 'connecté' : 'déconnecté');
+  }, [isAuthenticated]);
+
+  const login = (token) => {
+    localStorage.setItem('token', token);
+    setIsAuthenticated(true);
+    console.log("✅ connecté");
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
-    setIsConnected(false);
-    console.log('tu es deconnecte');
-
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+    console.log("🚪 déconnecté");
   };
 
   return (
-    <AuthContext.Provider value={{ isConnected, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

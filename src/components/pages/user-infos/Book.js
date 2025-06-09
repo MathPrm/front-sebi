@@ -1,7 +1,6 @@
 import'../../../assets/styles/pages/user-infos/book.css';
 
 import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../../context/AuthContext";
 
 function Book() {
     

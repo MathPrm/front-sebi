@@ -1,38 +1,11 @@
-{/*
 import '../../../assets/styles/pages/form/form-sign-up.css';
 import Sebi from '../../Sebi'
-
-function FormSignUp() {
-    return (
-        <div className='form-sign-up'>
-            <Sebi text="Pour te créer un compte c'est par ici !"/>
-            
-            <form className='sign-up-form'>
-                <h2 className='form-title'>Inscription</h2>
-                
-                <label for="username">Surnom</label>
-                <input type="text" name="username" className="username"></input>
-                
-                <label htmlFor="email">E-mail:</label>
-                <input type="email" className="email" name="email" required />
-                
-                <label for="password">Mot de passe</label>
-                <input type="password" name="password" className="password"></input>
-                
-                <button type="submit" className="login-button">Connexion</button>
-            </form>
-        </div>
-    )
-}
-
-export default FormSignUp;
-*/}
-
-import '../../../assets/styles/pages/form/form-sign-up.css';
-import Sebi from '../../../assets/images/sebi.svg'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const local_env = process.env.REACT_APP_LOCAL_ENV;
+const local_env = process.env.REACT_APP_SIGN_UP;
+
+console.log(local_env);
 
 function FormSignUp() {
     const [texteInput, setTextinput] = useState({
@@ -41,6 +14,8 @@ function FormSignUp() {
         password:""
     });
     const [text, setText] = useState("");
+
+    const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
 
@@ -66,6 +41,7 @@ function FormSignUp() {
             const data = await response.json();
             
             if (response.ok) {
+                navigate('/login')
                 console.log("Inscription réussie:", data);
             } else {
                 console.error("Erreur lors de l'inscription:", data);
@@ -82,10 +58,9 @@ function FormSignUp() {
 
     return (
         <div className='form-sign-up'>
-            <div className="sebi">
-                <img src={Sebi} alt='sebi la gazelle'></img>
-                <div className='bulle'>Pour te créer un compte c'est par ici !</div>
-            </div>
+            
+            <Sebi text="Pour te créer un compte c'est par ici !"/>
+
             <form className='sign-up-form' onSubmit={handleSubmit}>
                 <h2 className='form-title'>Inscription</h2>
                 <label htmlFor="username">Surnom</label>

@@ -15,9 +15,6 @@
     text-decoration: none;
 }
 
-.buttons:hover{
-
-}
 
 .home-button {
     display: flex;
@@ -29,4 +26,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+button{
+    font-size: 25px;
+    background-color: #5D7D20;
+    border: 0;
+    cursor: pointer;
+
 }

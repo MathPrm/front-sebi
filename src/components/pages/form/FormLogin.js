@@ -1,6 +1,9 @@
 import '../../../assets/styles/pages/form/form-login.css';
-import Sebi from '../../../assets/images/sebi.svg'
+import Sebi from './../../Sebi'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../../context/AuthContext';
 
 function Login() {
     const [inputs, setInputs] = useState({
@@ -8,6 +11,9 @@ function Login() {
         password: ''
     });
     const [errorMessage, setErrorMessage] = useState('');
+
+    const { login } = useContext(AuthContext);
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         setInputs({
@@ -20,8 +26,10 @@ function Login() {
         e.preventDefault();
         setErrorMessage('');
 
+        const login_env = process.env.REACT_APP_LOGIN;
+
         try {
-            const response = await fetch('http://127.0.0.1:8080/api/user/login', {
+            const response = await fetch(login_env, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(inputs)
@@ -36,26 +44,9 @@ function Login() {
 
             // Connexion réussie
             console.log('Connexion réussie !', data);
-            setErrorMessage('Connexion réussie !');
-            // Tu peux stocker le token ici dans le localStorage
-            // localStorage.setItem("token", data.token);
-                        
-            const user = users.find(u => u.email === inputs.email);
-            
-            if (!user) {
-                setErrorMessage('Email non trouvé');
-                return;
-            }
-
-            // Vérification du mot de passe (à faire côté serveur normalement)
-            if (user.password !== inputs.password) {
-                setErrorMessage('Mot de passe incorrect');
-                return;
-            }
-
-            // Connexion réussie
-            console.log('Connexion réussie !');
-            setErrorMessage('Connexion réussie !');
+            setErrorMessage('Connexion réussie !');  
+            login(data.token)
+            navigate('/')                     
             
             // Ici vous pouvez rediriger l'utilisateur ou stocker son token
             
@@ -67,10 +58,8 @@ function Login() {
 
     return (
         <div className='form-login'>
-            <div className="sebi">
-                <img src={Sebi} alt='sebi la gazelle'></img>
-                <div className='bulle'>Contente de te revoir !</div>
-            </div>
+            
+            <Sebi text="Contente de te revoir !"/>
            
             <form className="login-form" onSubmit={handleSubmit}>
                 <h2 className="form-title">CONNEXION</h2>
