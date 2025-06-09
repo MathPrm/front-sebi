@@ -1,4 +1,5 @@
 {
+  
   "name": "sebi_git",
   "version": "1.0.0",
   "main": "index.js",
@@ -23,5 +24,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "openai": "^5.1.1"
   }
 }
