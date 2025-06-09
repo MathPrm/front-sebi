@@ -6,7 +6,7 @@ const Classement = ({ level,isOpen, onClose }) => {
 
   const getScore = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/james/scores/${level}`);
+      const res = await fetch(`http://localhost:8080/api/james/scores/${level}`);
       if (res.ok) {
         const data = await res.json();
         setClassement(data);

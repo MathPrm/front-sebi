@@ -126,7 +126,7 @@ const JeuCalculInput = () => {
   // Envoie le score au serveur
   const sendScore = async (pseudo, scoreFinal) => {
     try {
-      const res = await fetch("http://localhost:5000/api/james/scores/difficile", {
+      const res = await fetch("http://localhost:8080/api/james/scores/difficile", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ pseudo, score: scoreFinal })
