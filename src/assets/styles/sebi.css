@@ -1,15 +1,18 @@
-.sebi {
+#container, img {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  gap: 1rem;
+  position: relative;
 }
 
-.sebi img {
-  transform: scaleX(-1);
-  width: auto;
-  height: 20vw;
-  max-height: 18rem;
+#head {
+  width: 120px;
+  top: 20px;
+  z-index: 1;
+}
+
+#body {
+  width: 100px;
+  left: 30px;
 }
 
 .sebi p.bubble {
@@ -46,4 +49,16 @@
   bottom: -30px;
   border: 15px solid;
   border-color: #fff transparent transparent #fff;
+}
+
+@media screen and (min-width: 1025px) {
+  #head {
+    width: 200px;
+  }
+
+  #body {
+    width: 180px;
+    bottom: 14px;
+    left: 45px;
+  }
 }
